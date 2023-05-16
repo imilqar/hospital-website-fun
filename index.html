@@ -6,10 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="/tailwind.config.js"></script>
+    <style>
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+        *::selection {
+            background: #f5f5f5;
+            color: #333;
+        }
+    </style>
 </head>
 
 <body>
     <main>
+        <div id="announcement" class="fixed z-50 inset-x-0 bottom-0">
+            <div class="bg-indigo-600 px-4 py-3 text-white flex place-center justify-between">
+                <p class="text-center text-sm font-medium">
+                    Yeni həyata birlikdə başlayaq
+                    <a href="/register.html" class="inline-block underline ms-1">Qeydiyyatdan keç!</a>
+                </p>
+                <a href="#" id="announcement-close" class="hover:bg-indigo-500 hover:rounded-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </a>
+                <script>
+                    const announcement = document.getElementById('announcement');
+                    const close = document.getElementById('announcement-close');
+                    close.addEventListener('click', () => {
+                        announcement.remove()
+                    });
+                </script>
+            </div>
+        </div>
         <header aria-label="Page Header" class="bg-gray-50">
             <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
                 <div class="flex items-center sm:justify-between sm:gap-4">
@@ -131,7 +163,7 @@
 
                             <li>
                                 <a href="/error.html" class="block group">
-                                    <img src="https://thumbs.dreamstime.com/b/handsome-turkish-man-doctor-against-white-background-studio-shot-179054724.jpg"
+                                    <img src="https://media.istockphoto.com/id/1214057472/photo/young-doctor-man-with-blue-eyes-wearing-medical-coat-and-stethoscope-over-isolated-background.jpg?s=170667a&w=0&k=20&c=WiFbxkssWLM3kqKvS1Qtfk4hCgxO-SLnbJtE49KDw7c="
                                         alt="" class="object-cover w-full rounded aspect-square" />
 
                                     <div class="mt-3">
@@ -188,6 +220,29 @@
                 </div>
             </div>
         </section>
+
+        <div class="mx-auto max-w-5xl px-4 py-8">
+            <section class="rounded-lg bg-gray-100 p-8">
+                <div class="grid grid-cols-1 gap-12 sm:grid-cols-3 sm:items-center">
+                    <img alt="Woman" src="https://blog.hubspot.com/hubfs/Customer-testimonial-page.jpg"
+                        class="aspect-square w-full rounded-lg object-cover" />
+
+                    <blockquote class="sm:col-span-2">
+                        <p class="text-xl font-medium sm:text-2xl">
+                            Hospi. kardioloq xidmətindən istifadə etdim. Çox yaxşı xidmət aldım. Əməkdaşınız Ayşə
+                            xanım çox yaxşı xidmət göstərdi. Təşəkkürlər Hospi.
+                        </p>
+
+                        <cite class="mt-8 inline-flex items-center not-italic">
+                            <span class="hidden h-px w-6 bg-gray-400 sm:inline-block"></span>
+                            <p class="text-sm uppercase text-gray-500 sm:ms-3">
+                                <strong>Səma Əliyeva</strong>, 25 yaş
+                            </p>
+                        </cite>
+                    </blockquote>
+                </div>
+            </section>
+        </div>
 
         <section>
             <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
@@ -294,7 +349,7 @@
             </div>
         </section>
 
-        <footer aria-label="Site Footer" class="bg-white dark:bg-gray-900">
+        <footer aria-label="Site Footer" class="bg-gray-900">
             <div class="max-w-screen-xl px-4 pt-16 pb-8 mx-auto sm:px-6 lg:px-8 lg:pt-24">
                 <div class="text-center">
                     <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-5xl">
@@ -356,7 +411,6 @@
             </div>
         </footer>
     </main>
-
 </body>
 
 </html>
